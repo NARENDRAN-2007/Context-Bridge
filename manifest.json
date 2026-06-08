@@ -1,0 +1,67 @@
+{
+  "manifest_version": 3,
+  "name": "ContextBridge",
+  "version": "1.0.0",
+  "description": "Save and restore AI conversation context across 10+ platforms with cloud sync",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "clipboardWrite",
+    "notifications",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://claude.ai/*",
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*",
+    "https://www.perplexity.ai/*",
+    "https://copilot.microsoft.com/*",
+    "https://grok.com/*",
+    "https://www.meta.ai/*",
+    "https://chat.mistral.ai/*",
+    "https://poe.com/*",
+    "https://you.com/*",
+    "https://huggingface.co/chat/*",
+    "https://*.supabase.co/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://claude.ai/*",
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*",
+        "https://www.perplexity.ai/*",
+        "https://copilot.microsoft.com/*",
+        "https://grok.com/*",
+        "https://www.meta.ai/*",
+        "https://chat.mistral.ai/*",
+        "https://poe.com/*",
+        "https://you.com/*",
+        "https://huggingface.co/chat/*"
+      ],
+      "js": ["content-script.js"],
+      "css": ["content-style.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  width: 380px;
+  min-height: 500px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0a0a0f;
+  color: #e8e6f0;
+  font-size: 13px;
+}
+.header { background: #0f0d1a; padding: 14px 16px; border-bottom: 1px solid #1e1b2e; }
+.logo { font-size: 16px; font-weight: 700; }
+.tagline { font-size: 10px; color: #6b7280; margin-top: 2px; }
+.tabs { display: flex; background: #0f0d1a; border-bottom: 1px solid #1e1b2e; }
+.tab {
+  flex: 1; padding: 10px; background: none; border: none;
+  color: #6b7280; cursor: pointer; font-size: 12px; font-weight: 500;
+  border-bottom: 2px solid transparent; transition: all 0.2s;
+}
+.tab.active { color: #a78bfa; border-bottom-color: #7c3aed; }
+.tab-content { display: none; padding: 12px; }
+.tab-content.active { display: block; }
+.search-wrap { margin-bottom: 10px; }
+.search-wrap input {
+  width: 100%; background: #0f0d1a; border: 1px solid #1e1b2e;
+  border-radius: 8px; padding: 8px 10px; color: #e8e6f0; font-size: 12px; outline: none;
+}
+.context-card {
+  background: #0f0d1a; border: 1px solid #1e1b2e; border-radius: 10px;
+  padding: 10px 12px; margin-bottom: 8px; cursor: pointer; transition: border 0.2s;
+}
+.context-card:hover { border-color: #7c3aed55; }
+.context-card.selected { border-color: #7c3aed; }
+.card-top { display: flex; align-items: center; justify-content: space-between; }
+.card-platform { font-size: 11px; font-weight: 600; color: #a78bfa; display: flex; align-items: center; gap: 4px; }
+.card-date { font-size: 10px; color: #4b5563; }
+.card-title { font-size: 12px; color: #e8e6f0; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-preview { font-size: 10px; color: #6b7280; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-actions { display: flex; gap: 6px; margin-top: 8px; }
+.card-btn { flex: 1; padding: 4px 8px; border-radius: 6px; border: none; cursor: pointer; font-size: 10px; font-weight: 500; }
+.card-restore { background: #1c1025; color: #a78bfa; border: 1px solid #7c3aed44; }
+.card-delete  { background: #1a0f0f; color: #f87171; border: 1px solid #ef444422; }
+.restore-info {
+  background: #0f0d1a; border: 1px solid #1e1b2e; border-radius: 8px;
+  padding: 10px; font-size: 11px; color: #6b7280; margin-bottom: 10px; line-height: 1.5;
+}
+.preview-label { font-size: 10px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.preview-box {
+  background: #0f0d1a; border: 1px solid #1e1b2e; border-left: 3px solid #7c3aed;
+  border-radius: 6px; padding: 8px 10px; font-size: 10px; color: #a8a3c1;
+  font-family: monospace; line-height: 1.5; max-height: 120px; overflow-y: auto;
+  white-space: pre-wrap; margin-bottom: 8px;
+}
+.btn-primary {
+  width: 100%; padding: 10px;
+  background: linear-gradient(135deg, #6d28d9, #3b82f6);
+  color: white; border: none; border-radius: 8px; cursor: pointer;
+  font-size: 13px; font-weight: 600; margin-bottom: 6px;
+}
+.btn-danger {
+  width: 100%; padding: 8px; background: #1a0f0f; color: #f87171;
+  border: 1px solid #ef444422; border-radius: 8px; cursor: pointer; font-size: 12px;
+}
+.toast {
+  background: #0d2018; color: #6ee7b7; border: 1px solid #10b98144;
+  border-radius: 6px; padding: 8px 10px; font-size: 11px; text-align: center; margin-top: 6px;
+}
+.settings-group { margin-bottom: 10px; }
+.settings-group label { font-size: 10px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px; }
+.settings-group input {
+  width: 100%; background: #0f0d1a; border: 1px solid #1e1b2e;
+  border-radius: 6px; padding: 8px 10px; color: #e8e6f0; font-size: 12px; outline: none;
+}
+.divider { height: 1px; background: #1e1b2e; margin: 12px 0; }
+.platforms-title { font-size: 10px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.platforms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.platforms-grid span {
+  background: #0f0d1a; border: 1px solid #1e1b2e; border-radius: 6px;
+  padding: 5px 8px; font-size: 11px; color: #a8a3c1;
+}
+.loading { text-align: center; color: #4b5563; padding: 20px; font-size: 12px; }
+.empty { text-align: center; color: #4b5563; padding: 24px; font-size: 12px; }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="header">
+    <div class="logo">🧠 ContextBridge</div>
+    <div class="tagline">Save & restore AI context</div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="saved">Saved</button>
+    <button class="tab" data-tab="restore">Restore</button>
+    <button class="tab" data-tab="settings">Settings</button>
+  </div>
+
+  <div id="tab-saved" class="tab-content active">
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="Search saved contexts..." />
+    </div>
+    <div id="contexts-list">
+      <div class="loading">Loading saved contexts...</div>
+    </div>
+  </div>
+
+  <div id="tab-restore" class="tab-content">
+    <div class="restore-info">
+      Select a saved context and click Restore to copy it to clipboard.
+      Then paste it at the start of your new AI chat.
+    </div>
+    <div id="restore-list"></div>
+    <div id="restore-preview" style="display:none;">
+      <div class="preview-label">Preview</div>
+      <div id="preview-text" class="preview-box"></div>
+      <button id="copy-btn" class="btn-primary">📋 Copy & Restore</button>
+      <div id="copy-toast" class="toast" style="display:none;">
+        ✅ Copied! Paste this in your new AI chat.
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-settings" class="tab-content">
+    <div class="settings-group">
+      <label>Supabase Project URL</label>
+      <input id="supabase-url" type="text" placeholder="https://xxx.supabase.co" />
+    </div>
+    <div class="settings-group">
+      <label>Supabase Anon Key</label>
+      <input id="supabase-key" type="text" placeholder="eyJhbGc..." />
+    </div>
+    <button id="save-settings" class="btn-primary">Save Settings</button>
+    <div id="settings-toast" class="toast" style="display:none;">✅ Settings saved!</div>
+
+    <div class="divider"></div>
+    <div class="platforms-title">Supported Platforms (10+)</div>
+    <div class="platforms-grid">
+      <span>🧠 Claude</span><span>🤖 ChatGPT</span>
+      <span>✨ Gemini</span><span>🔍 Perplexity</span>
+      <span>💼 Copilot</span><span>⚡ Grok</span>
+      <span>🌐 Meta AI</span><span>🌊 Mistral</span>
+      <span>⚡ Poe</span><span>🔎 You.com</span>
+      <span>🤗 HuggingChat</span><span>➕ More soon</span>
+    </div>
+
+    <div class="divider"></div>
+    <button id="clear-local" class="btn-danger">🗑️ Clear local data</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
